@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		
+		<title>Smallcase Stock Widget</title>
+
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="plugin-library/style.css">
+
+	</head>
+
+	<body>
+
+	<!-- <img src="http://www.shortday.in/wp-content/uploads/2015/02/Hrithik-Roshan-HD-Photos.jpg"> -->
+
+		<!-- JS start -->
+
+		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="plugin-library/style.css">
+		<div id="social-login-plugin-holder" class="plugin-holder plugin-holder-closed">
+			<div id="social-login-expand" class="show padding-widget clickable icon-style" onclick="showView()">&laquo;</div>
+			<div id="social-login-view" class="hide padding-widget font-size-xl social-login-view">
+				<div class="header">
+					<br>
+					<span class="font-size-xxl bold">Personalize your dashboard</span><br><br>
+					<span class="font-size-m font-color-grey">Personalize means the advisors will exactly cater to your requirements and needs</span><br><br><br>
+					<img src="plugin-library/social.png" width="250"><br>
+					<span class="font-size-xs">or <span class="clickable font-color-red">Login with Email</span></span><br>
+					<br><br>
+					<div class="font-size-xs font-color-light-grey italic">We take your privacy very seriously. We will never post on your behalf. Nor will we share your personal information without your consent.</div>
+					<div class="font-size-xs font-color-grey cancel-view clickable" onclick="hideView()">close</div>
+				</div>
+			</div>
+		</div> -->
+
+		<!-- JS ends -->		
+
+		<div class="container" style="margin-top: 10%;">
+
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<input id="search_field" type="text" class="form-control" value="" placeholder="Search with stock name or nse ticker" onkeyup="search()" autofocus="true">					
+				</div>
+			</div>
+
+			<br><br>
+
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<iframe id="stock-widget" class="stock-widget hide" src=""></iframe>
+				</div>
+			</div>
+		</div>
+
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+		<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+		<!-- <script type="text/javascript" src="plugin-library/plugin.js"></script> -->
+		<!-- <script type="text/javascript">setAppKey('ST1001');</script> -->
+
+		<script type="text/javascript">
+			function search() {
+				console.log(1);
+				var el = document.getElementById('search_field');	
+				q = el.value;
+
+				var stock_widget = document.getElementById('stock-widget');
+				stock_widget.src = 'https://www.smallcase.com/stock-hover/?timestamp=1502710573000&hash=1cc59c52611dbad29e05bff647ff663c2d5fba9782c9375265b14651b4fa8471&broker=kite&ticker=' + q;
+				if(q.length) stock_widget.classList.remove("hide");
+				else stock_widget.classList.add("hide");
+			}
+		</script>
+
+	</body>
+
+</html>

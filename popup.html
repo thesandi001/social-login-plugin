@@ -1,0 +1,101 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Stockable Stock Widget</title>
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="plugin-library/style.css">
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    
+    <div class="container">      
+
+      <div class="row">
+
+        <div class="col-xs-4">                  
+
+          <div class="left-panel">
+
+            <div class="stockable-primary font-size-xxxl padding-icon text-center">stockable</div>
+            
+            <ul class="nav nav-tabs">
+              <li id="nav-current"><a class="clickable">Current</a></li>
+              <li id="nav-history" class="active"><a class="clickable">History</a></li>              
+            </ul>
+
+            <div class="left-panel-scroll">
+              <div class="list-el">INFY</div>
+              <div class="list-el">TCS</div>
+              <div class="list-el">AUROPHARMA</div>
+              <div class="list-el">INDOWIND</div>
+              <div class="list-el">SUNPHARMA</div>
+              <div class="list-el">DHFL</div>
+              <div class="list-el">KTKBANK</div>
+              <div class="list-el">INFY</div>
+              <div class="list-el">TCS</div>
+              <div class="list-el">AUROPHARMA</div>
+              <div class="list-el">INDOWIND</div>
+              <div class="list-el">SUNPHARMA</div>
+              <div class="list-el">DHFL</div>
+              <div class="list-el">KTKBANK</div>
+            </div>
+
+            <br>
+
+            <div class="branding">powered by <span class="stockable-primary">smallcase</span></div>
+
+          </div>
+
+        </div>
+
+        <div class="col-xs-8">
+          
+          <div class="row">
+            <div class="col-xs-12">
+              <br>
+              <input id="search_field" type="text" class="form-control" value="" placeholder="Search with stock name or nse ticker" autofocus="true">          
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <iframe id="stock-widget" class="stock-widget hide" src=""></iframe>
+            </div>
+          </div>
+
+          <br>
+
+          <div id="btn-action" class="row hide">
+            <div class="col-xs-12">
+              <input type="submit" class="btn btn-buy" value="BUY">
+              <input type="submit" class="btn btn-sell" value="SELL">
+            </div>
+          </div>
+
+          <br>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+
